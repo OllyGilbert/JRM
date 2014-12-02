@@ -1,4 +1,6 @@
 class NotesController < ApplicationController
+  respond_to :html, :json
+
   before_filter :set_note, only: [:show, :edit, :update, :destroy]
 
   def index

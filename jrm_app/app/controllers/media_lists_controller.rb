@@ -1,4 +1,6 @@
 class MediaListsController < ApplicationController
+  respond_to :html, :json
+
   before_filter :set_media_list, only: [:show, :edit, :update, :destroy]
 
   def index

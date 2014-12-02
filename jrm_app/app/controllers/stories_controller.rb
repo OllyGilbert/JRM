@@ -1,4 +1,6 @@
 class StoriesController < ApplicationController
+  respond_to :html, :json
+
   before_filter :set_story, only: [:show, :edit, :update, :destroy]
 
   def index

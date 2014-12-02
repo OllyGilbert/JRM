@@ -1,4 +1,6 @@
 class JournalistsController < ApplicationController
+  respond_to :html, :json
+  
   before_filter :set_journalist, only: [:show, :edit, :update, :destroy]
 
   def index
