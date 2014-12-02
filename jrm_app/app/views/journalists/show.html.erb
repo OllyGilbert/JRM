@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @journalist.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @journalist.last_name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @journalist.title %>
+</p>
+
+
+<%= link_to 'Edit', edit_journalist_path(@journalist) %> |
+<%= link_to 'Back', journalists_path %>

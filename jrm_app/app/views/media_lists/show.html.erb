@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @media_list.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @media_list.user_id %>
+</p>
+
+<p>
+  <b>Journalist ids:</b>
+  <%= @media_list.journalist_ids %>
+</p>
+
+
+<%= link_to 'Edit', edit_media_list_path(@media_list) %> |
+<%= link_to 'Back', media_lists_path %>

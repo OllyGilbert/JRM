@@ -1,0 +1,27 @@
+<h1>Listing media_lists</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th>Journalist ids</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @media_lists.each do |media_list| %>
+  <tr>
+    <td><%= media_list.name %></td>
+    <td><%= media_list.user_id %></td>
+    <td><%= media_list.journalist_ids %></td>
+    <td><%= link_to 'Show', media_list %></td>
+    <td><%= link_to 'Edit', edit_media_list_path(media_list) %></td>
+    <td><%= link_to 'Destroy', media_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Media list', new_media_list_path %>
