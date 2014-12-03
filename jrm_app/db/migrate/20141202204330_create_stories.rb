@@ -4,7 +4,7 @@ class CreateStories < ActiveRecord::Migration
       t.text :headline
       t.text :summary
       t.date :date_published
-      t.string :journalist_id
+      t.integer :journalist_id
 
       t.timestamps
     end

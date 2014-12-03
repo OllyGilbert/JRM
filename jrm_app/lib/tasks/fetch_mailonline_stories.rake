@@ -1,28 +1,33 @@
-desc "Fetch mailonline journalist stories from Mail Online"
-task fetch_mailonline_stories: :environment do
+require 'nokogiri'
+require 'open-uri'
 
-    require 'nokogiri'
-    require 'open-uri'
-    require 'Story'
 
-    url = "http://www.dailymail.co.uk/home/search.html?s=&authornamef=Martin+Robinson"
+def scrape_mailonline(first_name, last_name, journo_id)
+    url = "http://www.dailymail.co.uk/home/search.html?s=&authornamef=#{CGI.escape(first_name)}+#{CGI.escape(last_name)}"
+
     page = Nokogiri::HTML(open(url))
-
-    # page.css("sch-res-title")
 
     stories = page.css("div.sch-res-content").map do |story|
         headline = story.css("h3 a").text
-        # puts headline
 
-            story = Story.create do |story|
-                story.headline = headline
-            end
-            # @story = Story.new
-            # @story.headline = headline
-            # @story.save 
+        story = Story.create do |story|
+            story.headline = headline
+            story.journalist_id = journo_id
+        end
+    end    
+end
+
+desc "Fetch mailonline journalist stories from Mail Online"
+task fetch_mailonline_stories: :environment do
+
+#run fetch mailonline stories for each mail online journalist in the database
+    journalists = Journalist.where(media_outlet: "mailonline")
+
+    journalists.each do |journo|
+        scrape_mailonline(journo.first_name, journo.last_name, journo.id)
     end
-
-    puts "Scraped #{stories.size} stories"
+    
+    #puts "#{stories.size} stories scrapped from Mail Online"
 
 end
 
