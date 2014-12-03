@@ -1,41 +1,40 @@
-desc "Fetch journalist stories"
-
-task fetch_journalist_stories: :environment do
-
+desc "Fetch mailonline journalist stories from Mail Online"
+task fetch_mailonline_stories: :environment do
 
     require 'nokogiri'
-    require 'rest-open-uri'
-
+    require 'open-uri'
     require 'Story'
 
     url = "http://www.dailymail.co.uk/home/search.html?s=&authornamef=Martin+Robinson"
     page = Nokogiri::HTML(open(url))
 
-    page.css("sch-res-title")
+    # page.css("sch-res-title")
 
     stories = page.css("div.sch-res-content").map do |story|
-      title = story.css("h3 a").text
-      journalist = story.css("h4 a").text
+        headline = story.css("h3 a").text
+        # puts headline
 
-      @story = Story.new
-      @story.title = title
-      @story.journalist = journalist
-      @story.save 
-        great!
+            story = Story.create do |story|
+                story.headline = headline
+            end
+            # @story = Story.new
+            # @story.headline = headline
+            # @story.save 
     end
 
+    puts "Scraped #{stories.size} stories"
 
 end
 
-search box
+# search box
 
-#controller action
-def create
-    @story = Story.new
-    @story.find_journo_stories(params[:name])        
-end
+# #controller action
+# def create
+#     @story = Story.new
+#     @story.find_journo_stories(params[:name])        
+# end
 
-#model
-def find_journo_stories(name)
-    the rake task
-end
+# #model
+# def find_journo_stories(name)
+#     the rake task
+# end
