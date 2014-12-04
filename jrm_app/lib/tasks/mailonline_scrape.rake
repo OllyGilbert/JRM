@@ -8,12 +8,12 @@ def scrape_mailonline(first_name, last_name, journo_id)
 
     stories = page.css("div.sch-res-content").map do |story|
         headline = story.css("h3 a").text
-        # date_published = story.css("h4").text
+        date_published = story.css("h4").text.split("-").pop.strip.split(",").shift
         summary = story.css("p.sch-res-preview").text
 
         story = Story.create do |story|
             story.headline = headline
-            # story.date_published =
+            story.date_published =date_published
             story.summary = summary
             story.journalist_id = journo_id
         end
