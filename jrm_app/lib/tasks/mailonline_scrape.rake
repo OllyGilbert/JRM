@@ -13,7 +13,7 @@ def scrape_mailonline(first_name, last_name, journo_id)
 
         story = Story.create do |story|
             story.headline = headline
-            story.date_published =date_published
+            story.date_published = date_published
             story.summary = summary
             story.journalist_id = journo_id
         end
