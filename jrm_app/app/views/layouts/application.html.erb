@@ -2,11 +2,33 @@
 <html>
 <head>
   <title>JrmApp</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <nav>
+    <ul>
+      <li>
+        <%= link_to 'Search Journalists', journalists_path(@journalist)%>
+      </li>
+      <li>
+        <%= link_to 'My Media Lists', media_lists_path(@media_list)%>
+      </li>
+      <li>
+        <%= link_to 'My Notes', notes_path(@note)%>
+      </li>
+      <li>
+        <%= link_to 'Stories', stories_path(@story)%>
+      </li>
+    </ul>
+  </nav>
+
+
   
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
