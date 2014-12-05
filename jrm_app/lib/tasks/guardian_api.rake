@@ -14,12 +14,14 @@ def get_guardian_json(first_name, last_name, journo_id)
 
     stories = results.map do |story|
         headline = story["fields"]["headline"]
+        link = story["webUrl"]
         summary = story["fields"]["trailText"].split(";").pop.strip
         date_published = story["fields"]["firstPublicationDate"].split("T").shift
         
 
         story = Story.create do |story|
             story.headline = headline
+            story.link = link
             story.summary = summary
             story.date_published = date_published
             story.journalist_id = journo_id
