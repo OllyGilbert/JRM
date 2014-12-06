@@ -1,5 +1,5 @@
 class Journalist < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :title, :media_outlet
+  attr_accessible :first_name, :last_name, :title, :media_outlet, :twitter
 
   has_many :media_lists
   has_many :users, through: :media_lists
