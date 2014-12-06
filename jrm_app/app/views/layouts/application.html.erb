@@ -10,30 +10,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <header class="page-header">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <ul class="nav nav-tabs">
+            <li>
+              <%= link_to 'Search Journalists', journalists_path(@journalist)%>
+            </li>
+            <li>
+              <%= link_to 'My Media Lists', media_lists_path(@media_list)%>
+            </li>
+            <li>
+              <%= link_to 'My Notes', notes_path(@note)%>
+            </li>
+            <li>
+              <%= link_to 'Stories', stories_path(@story)%>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-  <nav>
-    <ul>
-      <li>
-        <%= link_to 'Search Journalists', journalists_path(@journalist)%>
-      </li>
-      <li>
-        <%= link_to 'My Media Lists', media_lists_path(@media_list)%>
-      </li>
-      <li>
-        <%= link_to 'My Notes', notes_path(@note)%>
-      </li>
-      <li>
-        <%= link_to 'Stories', stories_path(@story)%>
-      </li>
-    </ul>
-  </nav>
-
-
-  
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     
-    <%= yield %>
-
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      
+      <%= yield %>
+  </div>
 </body>
 </html>
