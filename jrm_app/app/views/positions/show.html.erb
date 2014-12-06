@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @position.title %>
+</p>
+
+<p>
+  <b>Publisher:</b>
+  <%= @position.publisher_id %>
+</p>
+
+<p>
+  <b>Journalist:</b>
+  <%= @position.journalist_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_position_path(@position) %> |
+<%= link_to 'Back', positions_path %>

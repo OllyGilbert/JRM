@@ -11,3 +11,11 @@ Journo2 = Journalist.create(first_name: 'Lucy', last_name: 'Thackray', title: 'c
 Journo3 = Journalist.create(first_name: 'Matt', last_name: 'Chorley', title: 'correspondent', media_outlet: 'mailonline')
 Journo4 = Journalist.create(first_name: 'Katie', last_name: 'Allen', title: 'correspondent', media_outlet: 'guardian')
 Journo5 = Journalist.create(first_name: 'Ian', last_name: 'Black', title: 'correspondent', media_outlet: 'guardian')
+
+Position1 = Position.create(title: "correspondent", publisher_id: 1, journalist_id: 1)
+Position2 = Position.create(title: "correspondent", publisher_id: 1, journalist_id: 2)
+
+Publisher1 = Publisher.create(name: "mailonline")
+Publisher2 = Publisher.create(name: "guardian")
+
+

@@ -16,8 +16,7 @@ def get_guardian_json(first_name, last_name, journo_id)
         headline = story["fields"]["headline"]
         link = story["webUrl"]
         summary = story["fields"]["trailText"].split(";").pop.strip
-        date_published = story["fields"]["firstPublicationDate"].split("T").shift
-        
+        date_published = story["fields"]["firstPublicationDate"].split("T").shift  
 
         story = Story.create do |story|
             story.headline = headline
@@ -25,6 +24,7 @@ def get_guardian_json(first_name, last_name, journo_id)
             story.summary = summary
             story.date_published = date_published
             story.journalist_id = journo_id
+            story.publisher_id = Publisher.where(name: "guardian")[0].id
         end
     end
 end
@@ -32,9 +32,17 @@ end
 desc "Fetch guardian stories"
 task guardian: :environment do
 
-    journalists = Journalist.where(media_outlet: "guardian")
+    @mailonline_journos = []
 
-    journalists.each do |journo|
+    Journalist.all.each do |journalist|
+        journalist.publishers.each do |publisher|
+            if publisher.name == "guardian"
+                @mailonline_journos.push(journalist)
+            end
+        end
+    end
+
+    @mailonline_journos.each do |journo|
         get_guardian_json(journo.first_name, journo.last_name, journo.id)
     end
     
