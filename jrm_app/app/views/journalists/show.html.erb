@@ -16,6 +16,15 @@
 </p>
 
 <p>
+  <b>Stories:</b>
+  <% @journalist.stories.each do |story| %>
+    <div>
+      <div><a href="<%= story.link%>"><%= story.headline %></a></div>
+      <div><%= story.summary %></div>
+      <div><%= story.date_published %></div>
+    </div
+  <% end %>
+</p>
 
 
 <a class="twitter-timeline" href="https://twitter.com/annahodgekiss" data-widget-id="541241697662144512" data-screen-name="<%=@journalist.twitter%>">Tweets by @<%=@journalist.twitter%></a>
