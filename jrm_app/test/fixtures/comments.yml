@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  content: MyString
-  story_id: MyString
+  content: MyText
+  commentable_id: 1
+  commentable_type: MyString
   user_id: MyString
 
 two:
-  content: MyString
-  story_id: MyString
+  content: MyText
+  commentable_id: 1
+  commentable_type: MyString
   user_id: MyString

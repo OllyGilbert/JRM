@@ -1,4 +1,7 @@
 JrmApp::Application.routes.draw do
+  resources :comments
+
+
   resources :positions
 
 
@@ -10,9 +13,6 @@ JrmApp::Application.routes.draw do
   devise_for :users
 
   resources :stories
-
-
-  resources :comments
 
 
   resources :journalists

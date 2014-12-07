@@ -1,6 +1,5 @@
 class Comment < ActiveRecord::Base
-  attr_accessible :content, :story_id, :user_id
+  attr_accessible :content
 
-  belongs_to :user
-  belongs_to :journalist
+  belongs_to :commentable, polymorphic: true
 end
