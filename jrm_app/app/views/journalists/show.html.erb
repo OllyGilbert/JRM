@@ -32,6 +32,9 @@
 <a class="twitter-timeline" href="https://twitter.com/annahodgekiss" data-widget-id="541241697662144512" data-screen-name="<%=@journalist.twitter%>">Tweets by @<%=@journalist.twitter%></a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
+<%= render "comments/comments" %>
+<%= render "comments/form" %>
+
 
 <%= link_to 'Edit', edit_journalist_path(@journalist) %> |
 <%= link_to 'Back', journalists_path %>

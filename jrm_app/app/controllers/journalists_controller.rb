@@ -12,6 +12,13 @@ class JournalistsController < ApplicationController
     respond_with(@journalist)
   end
 
+  def show
+    @journalist = Journalist.find(params[:id])
+    @commentable = @journalist
+    @comments = @commentable.comments
+    @comment = Comment.new
+  end
+
   def new
     @journalist = Journalist.new
     respond_with(@journalist)
