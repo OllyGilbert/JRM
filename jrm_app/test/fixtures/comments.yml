@@ -4,10 +4,8 @@ one:
   content: MyText
   commentable_id: 1
   commentable_type: MyString
-  user_id: MyString
 
 two:
   content: MyText
   commentable_id: 1
   commentable_type: MyString
-  user_id: MyString

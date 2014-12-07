@@ -9,7 +9,10 @@ class StoriesController < ApplicationController
   end
 
   def show
-    respond_with(@story)
+    @story = Story.find(params[:id])
+    @commentable = @story
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   def new
