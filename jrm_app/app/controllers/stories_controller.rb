@@ -2,6 +2,7 @@ class StoriesController < ApplicationController
   respond_to :html, :json
 
   before_filter :set_story, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   def index
     @stories = Story.all

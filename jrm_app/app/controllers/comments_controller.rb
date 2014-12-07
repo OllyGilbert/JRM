@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   respond_to :html, :json
 
   before_filter :set_comment, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   def index
     @comments = Comment.all

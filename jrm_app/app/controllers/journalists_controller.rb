@@ -2,6 +2,7 @@ class JournalistsController < ApplicationController
   respond_to :html, :json
   
   before_filter :set_journalist, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   def index
     @journalists = Journalist.all

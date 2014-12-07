@@ -1,5 +1,6 @@
 class PublishersController < ApplicationController
   before_filter :set_publisher, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   def index
     @publishers = Publisher.all
