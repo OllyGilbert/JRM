@@ -7,4 +7,6 @@ class Story < ActiveRecord::Base
   belongs_to :publisher
   has_many :comments
   has_many :users, through: :comments
+
+  acts_as_commentable
 end

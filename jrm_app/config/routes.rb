@@ -12,9 +12,6 @@ JrmApp::Application.routes.draw do
   resources :stories
 
 
-  resources :comments
-
-
   resources :journalists
 
 

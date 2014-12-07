@@ -36,6 +36,14 @@ class StoriesController < ApplicationController
     respond_with(@story)
   end
 
+  def comment
+    commentable = Story.create
+    comment = commentable.comments.create
+    comment.title = "First comment."
+    comment.comment = "This is the first comment."
+    comment.save
+  end
+
   private
     def set_story
       @story = Story.find(params[:id])
