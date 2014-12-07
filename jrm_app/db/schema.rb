@@ -41,14 +41,6 @@ ActiveRecord::Schema.define(:version => 20141207151259) do
     t.datetime "updated_at",     :null => false
   end
 
-  create_table "notes", :force => true do |t|
-    t.text     "content"
-    t.integer  "user_id"
-    t.integer  "journalist_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
   create_table "positions", :force => true do |t|
     t.string   "title"
     t.integer  "publisher_id"
