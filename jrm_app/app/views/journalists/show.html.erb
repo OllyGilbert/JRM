@@ -15,25 +15,39 @@
   <%= @journalist.title %>
 </p>
 
-
+<%= render "comments/form" %>
 
 <p>
   <b>Stories:</b>
-  <% @journalist.stories.each do |story| %>
-    <div>
-      <div><a href="<%= story.link%>"><%= story.headline %></a></div>
-      <div><%= story.summary %></div>
-      <div><%= story.date_published %></div>
-    </div
+  <% grab_data_for_journalist(@journalist).each do |instance| %>
+
+    <% if instance.class == Comment%>
+      <div>
+        <div><%= instance.content %></div>
+      </div>
+    <% else %>
+      <div>
+        <div><a href="<%= instance.link%>"><%= instance.headline %></a></div>
+        <div><%= instance.summary %></div>
+        <div><%= instance.date_published %></div>
+        <div> 
+          <h1><%= instance.comments.count %></h1>
+          <% instance.comments.order("created_at DESC").each do |story_comment| %>
+            <h1> YO</h1>
+            <%= story_comment.content %>
+          <% end %>
+        
+        </div>
+      </div>
+    <% end %>
+    
+
   <% end %>
 </p>
 
 
 <a class="twitter-timeline" href="https://twitter.com/annahodgekiss" data-widget-id="541241697662144512" data-screen-name="<%=@journalist.twitter%>">Tweets by @<%=@journalist.twitter%></a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-<%= render "comments/comments" %>
-<%= render "comments/form" %>
 
 
 <%= link_to 'Edit', edit_journalist_path(@journalist) %> |
