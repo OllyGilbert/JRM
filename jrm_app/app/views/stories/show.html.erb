@@ -21,7 +21,7 @@
 </p>
 
 <%= render "comments/comments" %>
-<%= render "comments/form" %>
+<%= render partial: "comments/form", locals: { resource: @story }%>
 
 
 <%= link_to 'Edit', edit_story_path(@story) %> |

@@ -15,8 +15,6 @@
   <%= @journalist.title %>
 </p>
 
-<%= render "comments/form" %>
-
 <p>
   <b>Stories:</b>
   <% grab_data_for_journalist(@journalist).each do |instance| %>
@@ -24,6 +22,7 @@
     <% if instance.class == Comment%>
       <div>
         <div><%= instance.content %></div>
+        <div><%= instance.created_at %></div>
       </div>
     <% else %>
       <div>
@@ -31,10 +30,10 @@
         <div><%= instance.summary %></div>
         <div><%= instance.published_at %></div>
         <div> 
-          <h1><%= instance.comments.count %></h1>
+          <%= render partial: "comments/form", locals: { resource: instance} %>
           <% instance.comments.order("created_at DESC").each do |story_comment| %>
-            <h1> YO</h1>
             <%= story_comment.content %>
+            <%= "-" * 100 %>
           <% end %>
         
         </div>
