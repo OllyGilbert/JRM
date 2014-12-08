@@ -14,7 +14,7 @@ module StoriesHelper
     all_instances << journalist.comments
     all_instances.flatten!
     all_instances.sort_by do |instance|
-      instance.class == Story ? instance.date_published : instance.created_at
+      instance.class == Story ? instance.published_at : instance.created_at
     end.reverse
   end
 

@@ -29,7 +29,7 @@
       <div>
         <div><a href="<%= instance.link%>"><%= instance.headline %></a></div>
         <div><%= instance.summary %></div>
-        <div><%= instance.date_published %></div>
+        <div><%= instance.published_at %></div>
         <div> 
           <h1><%= instance.comments.count %></h1>
           <% instance.comments.order("created_at DESC").each do |story_comment| %>

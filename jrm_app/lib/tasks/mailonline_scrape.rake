@@ -10,12 +10,14 @@ def scrape_mailonline(first_name, last_name, journo_id)
         headline = story.css("h3 a").text
         link = "http://www.dailymail.co.uk" + story.css("h3 a").first.attributes["href"].value
         date_published = story.css("h4").text.split("-").pop.strip.split(",").shift
+        published_at = story.css("h4").text.split("-").pop.strip
         summary = story.css("p.sch-res-preview").text
 
         story = Story.create do |story|
             story.headline = headline
             story.link = link
             story.date_published = date_published
+            story.published_at = published_at
             story.summary = summary
             story.journalist_id = journo_id
         end

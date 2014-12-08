@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141207151259) do
+ActiveRecord::Schema.define(:version => 20141208104052) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20141207151259) do
     t.datetime "updated_at",     :null => false
     t.string   "link"
     t.integer  "publisher_id"
+    t.datetime "published_at"
   end
 
   create_table "users", :force => true do |t|
