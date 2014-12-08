@@ -16,13 +16,15 @@ def get_guardian_json(first_name, last_name, journo_id)
         headline = story["fields"]["headline"]
         link = story["webUrl"]
         summary = story["fields"]["trailText"].split(";").pop.strip
-        date_published = story["fields"]["firstPublicationDate"].split("T").shift  
+        date_published = story["fields"]["firstPublicationDate"].split("T").shift
+        published_at = story["webPublicationDate"]
 
         story = Story.create do |story|
             story.headline = headline
             story.link = link
             story.summary = summary
             story.date_published = date_published
+            story.published_at = published_at
             story.journalist_id = journo_id
             story.publisher_id = Publisher.where(name: "guardian")[0].id
         end

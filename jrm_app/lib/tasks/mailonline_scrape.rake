@@ -28,7 +28,7 @@ desc "Fetch mailonline stories"
 task mailonline: :environment do
 
 #run fetch mailonline stories for each mail online journalist in the database
-    journalists = Journalist.where(media_outlet: "mailonline")
+    journalists = Journalist.joins(:positions).where("positions.publisher_id= ?", Publisher.find_by_name("mailonline").id)
 
     journalists.each do |journo|
         scrape_mailonline(journo.first_name, journo.last_name, journo.id)
