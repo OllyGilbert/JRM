@@ -32,17 +32,9 @@ end
 desc "Fetch guardian stories"
 task guardian: :environment do
 
-    @mailonline_journos = []
+    journalists = Journalist.joins(:positions).where("positions.publisher_id= ?", Publisher.find_by_name("guardian").id)
 
-    Journalist.all.each do |journalist|
-        journalist.publishers.each do |publisher|
-            if publisher.name == "guardian"
-                @mailonline_journos.push(journalist)
-            end
-        end
-    end
-
-    @mailonline_journos.each do |journo|
+    journalists.each do |journo|
         get_guardian_json(journo.first_name, journo.last_name, journo.id)
     end
     

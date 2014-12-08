@@ -7,7 +7,6 @@ class Journalist < ActiveRecord::Base
   has_many :stories
   has_many :positions
   has_many :publishers, through: :positions
-  has_many :publishers
 
   has_many :comments, as: :commentable
 end

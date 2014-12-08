@@ -4,5 +4,4 @@ class Publisher < ActiveRecord::Base
   has_many :stories
   has_many :positions
   has_many :journalists, through: :positions
-  has_many :journalists
 end

@@ -24,7 +24,7 @@ def scrape_mailonline(first_name, last_name, journo_id)
     end    
 end
 
-desc "Fetch mailonline journalist stories"
+desc "Fetch mailonline stories"
 task mailonline: :environment do
 
 #run fetch mailonline stories for each mail online journalist in the database
