@@ -20,6 +20,7 @@ def scrape_mailonline(first_name, last_name, journo_id)
             story.published_at = published_at
             story.summary = summary
             story.journalist_id = journo_id
+            story.publisher_id = Publisher.where(name: "Daily Mail")[0].id
         end
     end    
 end
@@ -28,7 +29,7 @@ desc "Fetch mailonline stories"
 task mailonline: :environment do
 
 #run fetch mailonline stories for each mail online journalist in the database
-    journalists = Journalist.joins(:positions).where("positions.publisher_id= ?", Publisher.find_by_name("mailonline").id)
+    journalists = Journalist.joins(:positions).where("positions.publisher_id= ?", Publisher.find_by_name("Daily Mail").id)
 
     journalists.each do |journo|
         scrape_mailonline(journo.first_name, journo.last_name, journo.id)

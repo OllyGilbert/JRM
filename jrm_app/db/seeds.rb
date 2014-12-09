@@ -18,7 +18,7 @@ Position3 = Position.create(title: "Political Editor", publisher_id: 1, journali
 Position4 = Position.create(title: "Economics Reporter", publisher_id: 2, journalist_id: 4)
 Position5 = Position.create(title: "Middle East Editor", publisher_id: 2, journalist_id: 5)
 
-Publisher1 = Publisher.create(name: "mailonline")
-Publisher2 = Publisher.create(name: "guardian")
+Publisher1 = Publisher.create(name: "Daily Mail")
+Publisher2 = Publisher.create(name: "Guardian")
 
 

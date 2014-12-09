@@ -26,7 +26,7 @@ def get_guardian_json(first_name, last_name, journo_id)
             story.date_published = date_published
             story.published_at = published_at
             story.journalist_id = journo_id
-            story.publisher_id = Publisher.where(name: "guardian")[0].id
+            story.publisher_id = Publisher.where(name: "Guardian")[0].id
         end
     end
 end
@@ -34,7 +34,7 @@ end
 desc "Fetch guardian stories"
 task guardian: :environment do
 
-    journalists = Journalist.joins(:positions).where("positions.publisher_id= ?", Publisher.find_by_name("guardian").id)
+    journalists = Journalist.joins(:positions).where("positions.publisher_id= ?", Publisher.find_by_name("Guardian").id)
 
     journalists.each do |journo|
         get_guardian_json(journo.first_name, journo.last_name, journo.id)
