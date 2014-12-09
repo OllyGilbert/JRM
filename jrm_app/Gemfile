@@ -9,6 +9,7 @@ gem 'pg'
 gem 'devise'
 gem 'nokogiri'
 gem 'httparty'
+gem "omniauth-twitter"
 
 group :development, :test do
     gem 'railroady'
