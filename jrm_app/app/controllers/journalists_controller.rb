@@ -9,11 +9,9 @@ class JournalistsController < ApplicationController
   end
 
   def show
-    respond_with(@journalist)
-  end
-
-  def show
+    client = Journalist.twitter_auth
     @journalist = Journalist.find(params[:id])
+    @journalist_twitter = client.user(@journalist.twitter)
     @commentable = @journalist
     @comments = @commentable.comments
     @comment = Comment.new

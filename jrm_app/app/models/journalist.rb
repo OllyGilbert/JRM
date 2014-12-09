@@ -9,4 +9,14 @@ class Journalist < ActiveRecord::Base
   has_many :publishers, through: :positions
 
   has_many :comments, as: :commentable
+
+  def self.twitter_auth
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV["JRM_TWITTER_CONSUMER_KEY"]
+      config.consumer_secret     = ENV["JRM_TWITTER_SECRET_KEY"]
+      config.access_token        = ENV["JRM_TWITTER_ACCESS_TOKEN"]
+      config.access_token_secret = ENV["JRM_TWITTER_ACCESS_TOKEN_SECRET"]
+    end
+  end
+
 end

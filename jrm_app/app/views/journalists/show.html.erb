@@ -3,14 +3,10 @@
 <div class="row">
   <div class="col-md-3">
     <p>
-      <b>First name:</b>
-      <%= @journalist.first_name %>
+      <%= image_tag @journalist_twitter.profile_image_url.to_s.sub("_normal", "")%>
+      <%#= image_tag @journalist_twitter.profile_image_url.to_s.sub("_normal", "") width: "250" height: "250" %>
     </p>
-
-    <p>
-      <b>Last name:</b>
-      <%= @journalist.last_name %>
-    </p>
+    <p><%=@journalist.first_name%> <%=@journalist.last_name%></p>
 
     <p>
       <b>Title:</b>
