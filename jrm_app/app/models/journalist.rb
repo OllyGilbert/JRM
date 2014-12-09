@@ -19,4 +19,13 @@ class Journalist < ActiveRecord::Base
     end
   end
 
+  def publisher
+    positions = @journalist.positions
+      positions.each do |position|
+        position.title
+        position.publisher.name
+      end
+
+  end
+
 end
