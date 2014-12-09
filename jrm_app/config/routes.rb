@@ -8,7 +8,7 @@ JrmApp::Application.routes.draw do
 
   get "welcome/index"
 
-  devise_for :users
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   resources :stories do
     resources :comments
