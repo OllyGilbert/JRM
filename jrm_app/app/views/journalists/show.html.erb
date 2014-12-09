@@ -2,10 +2,10 @@
 
 <div class="row">
   <div class="col-md-3">
-    <p>
+    <div id="journo_pic">
       <%= image_tag @journalist_twitter.profile_image_url.to_s.sub("_normal", "")%>
       <%#= image_tag @journalist_twitter.profile_image_url.to_s.sub("_normal", "") width: "250" height: "250" %>
-    </p>
+    </div>
     <p><%=@journalist.first_name%> <%=@journalist.last_name%></p>
 
     <p>
