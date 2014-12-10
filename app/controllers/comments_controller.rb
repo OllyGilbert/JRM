@@ -12,10 +12,16 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(params[:comment])
     @comment.user_id = current_user.id
-    if @comment.save
-      redirect_to @commentable, notice: "Comment created."
-    else
-      render :new
+
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.js {}
+        format.json { render json: @comment, status: :created}
+      else
+        format.html { render action: "new" }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end
     end
   end
 

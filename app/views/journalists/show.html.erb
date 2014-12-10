@@ -20,7 +20,9 @@
     </div>
   </div>
   <div class="col-md-9">
-    <b>Stories:</b>
+    <div>
+      <%= render partial: "comments/form", locals: { resource: @journalist} %>
+    </div>
     <% grab_data_for_journalist(@journalist).each do |instance| %>
 
       <% if instance.class == Comment%>
