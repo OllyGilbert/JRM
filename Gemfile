@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.2'
 
 gem 'rails', '3.2.19'
 
@@ -15,6 +15,7 @@ gem "omniauth-google-oauth2"
 gem "omniauth-twitter"
 gem "twitter"
 
+
 group :development, :test do
     gem 'railroady'
 end
@@ -26,7 +27,7 @@ gem 'rails_12factor', group: :production
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem 'twitter-bootstrap-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

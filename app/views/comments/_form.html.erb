@@ -1,4 +1,4 @@
-<%= form_for [resource, Comment.new] do |f| %>
+<%= form_for [resource, Comment.new], role: "form" do |f| %>
   <% if @comment.errors.any? %>
     <div class="error_messages">
       <h2>Please correct the following errors.</h2>
@@ -10,10 +10,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.text_area :content, rows: 4 %>
+  <div class="form-group">
+    <%= f.text_area :content, rows: 4, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add comment", class: "btn" %>
   </div>
 <% end %>
