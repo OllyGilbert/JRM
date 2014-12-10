@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  respond_to :html, :json
+
   before_filter :load_commentable
   
   def index
@@ -12,10 +14,18 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(params[:comment])
     @comment.user_id = current_user.id
-    if @comment.save
-      redirect_to @commentable, notice: "Comment created."
-    else
-      render :new
+    respond_to do |format|
+      if @comment.save
+        format.html do
+          redirect_to @commentable, notice: "Comment created."
+        end
+        format.json { render json: @comment.to_json, status: :precondition_failed }
+      else
+        format.html do
+          flash[:success] = "comment created"
+        end
+        format.json 
+      end
     end
   end
 
