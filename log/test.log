@@ -1,0 +1,902 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.3ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.9ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.7ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "comments" DISABLE TRIGGER ALL;ALTER TABLE "journalists" DISABLE TRIGGER ALL;ALTER TABLE "media_lists" DISABLE TRIGGER ALL;ALTER TABLE "notes" DISABLE TRIGGER ALL;ALTER TABLE "stories" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "story_id", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "journalists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "journalists" ("first_name", "last_name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "media_lists"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "media_lists" ("name", "user_id", "journalist_ids", "created_at", "updated_at", "id") VALUES ('MyString', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "notes"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "notes" ("content", "user_id", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 1, 1, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "stories"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "stories" ("headline", "summary", "date_published", "journalist_id", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', NULL, 0, '2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=() already exists.
+: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2014-12-04 17:16:16', '2014-12-04 17:16:16', 298486374)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "comments" ENABLE TRIGGER ALL;ALTER TABLE "journalists" ENABLE TRIGGER ALL;ALTER TABLE "media_lists" ENABLE TRIGGER ALL;ALTER TABLE "notes" ENABLE TRIGGER ALL;ALTER TABLE "stories" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL

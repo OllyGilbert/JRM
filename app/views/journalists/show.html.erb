@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-3">
+    <div id="journo_pic">
+      <%= image_tag @journalist_twitter.profile_image_url.to_s.sub("_normal", "")%>
+    </div>
+    <p><%=@journalist.first_name%> <%=@journalist.last_name%></p>
+    <p>
+      <% positions = @journalist.positions %>
+      <% positions.each do |position| %>
+        <%= position.title %>,
+        <%= position.publisher.name %>
+      <% end %>
+    </p>
+
+    <div id="twitter widget">
+      <a class="twitter-timeline" href="https://twitter.com/annahodgekiss" data-widget-id="541241697662144512" data-screen-name="<%=@journalist.twitter%>" width="250">Tweets by @<%=@journalist.twitter%></a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <b>Stories:</b>
+    <% grab_data_for_journalist(@journalist).each do |instance| %>
+
+      <% if instance.class == Comment%>
+        <div class="panel panel-default">
+          <div class="panel-body"><%= instance.content %></div>
+          <div><%= instance.created_at %></div>
+        </div>
+      <% else %>
+        <div class="panel panel-default">
+          <div class="panel-title"><a href="<%= instance.link%>"><%= instance.headline %></a></div>
+          <div class="panel-body"><%= instance.summary %></div>
+          <div><%= instance.published_at %></div>
+          <div> 
+            <%= render partial: "comments/form", locals: { resource: instance} %>
+            <% instance.comments.order("created_at DESC").each do |story_comment| %>
+              <%= story_comment.content %>
+              <%= "-" * 100 %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
+
+
+<%= link_to 'Edit', edit_journalist_path(@journalist) %> |
+<%= link_to 'Back', journalists_path %>
