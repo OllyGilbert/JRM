@@ -1,4 +1,4 @@
-<%= form_for [resource, Comment.new], remote: true, role: "form" do |f| %>
+<%= form_for [resource, Comment.new], remote: true, :html => {:'data-type' => 'json', id: resource.class }, role: "form" do |f| %>
   <% if @comment.errors.any? %>
     <div class="error_messages">
       <h2>Please correct the following errors.</h2>
