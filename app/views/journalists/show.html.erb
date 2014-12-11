@@ -37,9 +37,12 @@
           <div><%= instance.published_at %></div>
           <div> 
             <%= render partial: "comments/form", locals: { resource: instance} %>
+            <div class='panel panel-default'>
             <% instance.comments.order("created_at DESC").each do |story_comment| %>
+              <div class='panel-body'>
               <%= story_comment.content %>
-              <%= "-" * 100 %>
+              </div>
+            </div>
             <% end %>
           </div>
           <div class="story-comment-container">
