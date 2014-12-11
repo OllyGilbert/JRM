@@ -4,7 +4,8 @@ class JournalistsController < ApplicationController
   before_filter :set_journalist, only: [:show, :edit, :update, :destroy]
 
   def index
-    @journalists = Journalist.all
+    @search = Journalist.search(params[:q])
+    @journalists = @search.result
     respond_with(@journalists)
   end
 
