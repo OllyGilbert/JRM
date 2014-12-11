@@ -26,10 +26,9 @@
     <% grab_data_for_journalist(@journalist).each do |instance| %>
 
       <% if instance.class == Comment%>
-        <div class="panel panel-default">
-          <div class="panel-body"><%= instance.content %></div>
-          <div><%= instance.created_at %></div>
-        </div>
+
+        <%= render @instance_comment %>
+
       <% else %>
         <div class="panel panel-default">
           <div class="panel-title"><a href="<%= instance.link%>"><%= instance.headline %></a></div>
