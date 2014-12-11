@@ -11,9 +11,6 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.text_area :content, rows: 2, class: "form-control", placeholder: 'How was coffee?' %>
+    <%= f.text_area :content, rows: 5, class: "form-control story_comment", placeholder: 'What are you thinking?', "data-story-id" => resource.id %>
   </div>
-  <!-- <div class="actions">
-    <%= f.submit "Add comment", class: "btn" %>
-  </div> -->
 <% end %>

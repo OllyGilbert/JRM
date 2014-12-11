@@ -1,10 +1,20 @@
 $(document).ready ->
-  
-  #$("#Journalist").on("ajax:success", (e, data, status, xhr) ->
-  #  console.log 'Ajax success', data
-  #  $(".panel-default").first().before "<div class='panel panel-default'><div class='panel-body'>" + data.content +  "<div>" + data.created_at + "</div></div>"
-  #).on "ajax:error", (e, xhr, status, error) ->
-  #  $("#new_article").append "<p>ERROR</p>"
+  addStoryComment = (element) ->
+    textarea = $(element)
+    id = textarea.data("story-id")
+    content = textarea.val()
+    $.ajax(
+      type: "POST"
+      url: "/stories/" + id + "/comments"
+      data: { comment: { content: content } }
+    ).done((data) ->
+      console.log "Ajax success", data
+      $(element).parent().parent().parent().parent().children().last().prepend "<div class='panel panel-default'><div class='panel-body'>" + data.content +  "<div>" + data.created_at + "</div></div>"
+      $(element).val('')
+    ).fail (err) ->
+      console.log 'error!'
+      $("#new_article").append "<p>ERROR</p>"
+
   addComment = ->
     content = $("#comment_content").val()
     $.ajax(
@@ -19,14 +29,13 @@ $(document).ready ->
       console.log 'error!'
       $("#new_article").append "<p>ERROR</p>"
 
-
-  $("#Story").on("ajax:success", (e, data, status, xhr) ->
-    console.log 'You need to append to the story'
-  ).on "ajax:error", (e, xhr, status, error) ->
-    $("#new_article").append "<p>ERROR</p>"
-
   $("#comment_content").bind "enterKey", (e) ->
     addComment()
+  $(".story_comment").bind "enterKey", (e) ->
+    addStoryComment(event.target)
   $("#comment_content").keyup (e) ->
-   $(this).trigger "enterKey" if e.keyCode is 13
-   return
+    $(this).trigger "enterKey" if e.keyCode is 13
+    return
+  $(".story_comment").keyup (e) ->
+    $(this).trigger "enterKey" if e.keyCode is 13
+    return
