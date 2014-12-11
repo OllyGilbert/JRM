@@ -14,6 +14,7 @@ gem 'httparty'
 gem "omniauth-google-oauth2"
 gem "omniauth-twitter"
 gem "twitter"
+gem 'rails3-jquery-autocomplete'
 # gem 'js-routes'
 
 
