@@ -26,22 +26,44 @@
     <% grab_data_for_journalist(@journalist).each do |instance| %>
 
       <% if instance.class == Comment%>
-        <div class="panel panel-default">
-          <div class="panel-body"><%= instance.content %></div>
-          <div><%= instance.created_at %></div>
+        <div class="media">
+          <a class="media-left">
+              <%= image_tag User.find(instance.user_id).image %>
+          </a>
+          <div class="media-body">
+            <%= instance.content %>
+          </div>
+          <div class="media-right">
+            <%= instance.created_at.to_formatted_s(:short) %>
+          </div>
         </div>
       <% else %>
         <div class="panel panel-default">
-          <div class="panel-title"><a href="<%= instance.link%>"><%= instance.headline %></a></div>
-          <div class="panel-body"><%= instance.summary %></div>
-          <div><%= instance.published_at %></div>
+          <div class="panel-title">
+            <a href="<%= instance.link%>"><%= instance.headline %></a>
+          </div>
+          <div class="panel-body">
+            <%= instance.summary %>
+          </div>
+          <div>
+            <%= instance.published_at.to_formatted_s(:short) %>
+          </div>
           <div> 
             <%= render partial: "comments/form", locals: { resource: instance} %>
-            <% instance.comments.order("created_at DESC").each do |story_comment| %>
-              <%= story_comment.content %>
-              <%= "-" * 100 %>
-            <% end %>
           </div>
+            <% instance.comments.order("created_at DESC").each do |story_comment| %>
+              <div class="media">
+                <a class="media-left">
+                  <%= image_tag User.find(story_comment.user_id).image %>
+                </a>
+                <div class="media-body">
+                  <%= story_comment.content %>
+                </div>
+                <div class="media-right">
+                  <%= story_comment.created_at.to_formatted_s(:short) %>
+                </div>
+              </div>
+            <% end %>
           <div class="story-comment-container">
             
           </div>

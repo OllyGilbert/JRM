@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   has_many :media_lists
   has_many :journalists, through: :media_lists
+  has_many :comments
 
   has_many :providers, dependent: :destroy
 
