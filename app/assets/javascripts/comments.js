@@ -1,9 +1,10 @@
 $(document).ready(function() {
   var addComment, addStoryComment;
+
   addStoryComment = function(element) {
     var content, id, textarea;
     textarea = $(element);
-    id = textarea.data("story-id");
+    id = textarea.data("resource-id");
     content = textarea.val();
     return $.ajax({
       type: "POST",
@@ -15,17 +16,21 @@ $(document).ready(function() {
       }
     }).done(function(data) {
       console.log("Ajax success", data);
-      $(element).parent().parent().parent().parent().children().last().prepend("<div class='panel panel-default'><div class='panel-body'>" + data.content + "<div>" + data.created_at + "</div></div>");
+      $(element).parent().parent().parent().parent().children().last().prepend("<div class='media'><div class='media-body'>" + data.content + "</div><div class='media-right'>" + data.created_at + "</div></div>"
+        );
       return $(element).val('');
     }).fail(function(err) {
       console.log('error!');
       return $("#new_article").append("<p>ERROR</p>");
     });
   };
+
+  /////////
+
   addComment = function(element) {
     var content, id, textarea;
     textarea = $(element);
-    id = textarea.data("story-id");
+    id = textarea.data("resource-id");
     content = textarea.val();
     return $.ajax({
       type: "POST",
@@ -37,7 +42,7 @@ $(document).ready(function() {
       }
     }).done(function(data) {
       console.log("Ajax success", data);
-      $(".panel-default").first().before("<div class='panel panel-default'><div class='panel-body'>" + data.content + "<div>" + data.created_at + "</div></div>");
+      $(".panel-default").first().before("<div class='media'><div class='media-body'>" + data.content + "</div><div class='media-right'" + data.created_at + "</div></div>");
       return $(element).val('');
     }).fail(function(err) {
       console.log('error!');

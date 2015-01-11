@@ -51,6 +51,7 @@
           <div> 
             <%= render partial: "comments/form", locals: { resource: instance} %>
           </div>
+          <div class="story-comment-container">
             <% instance.comments.order("created_at DESC").each do |story_comment| %>
               <div class="media">
                 <a class="media-left">
@@ -64,8 +65,6 @@
                 </div>
               </div>
             <% end %>
-          <div class="story-comment-container">
-            
           </div>
         </div>
       <% end %>
