@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  $(".comment-form").on("submit", function() {
+    $(this).data("")
+  });
   var addComment, addStoryComment;
 
   addStoryComment = function(element) {
@@ -8,7 +11,8 @@ $(document).ready(function() {
     content = textarea.val();
     return $.ajax({
       type: "POST",
-      url: "/stories/" + id + "/comments",
+      url: "/stories/" + id + "/comments.json",
+      content_type: "application/json",
       data: {
         comment: {
           content: content
@@ -42,7 +46,8 @@ $(document).ready(function() {
       }
     }).done(function(data) {
       console.log("Ajax success", data);
-      $(".panel-default").first().before("<div class='media'><div class='media-body'>" + data.content + "</div><div class='media-right'" + data.created_at + "</div></div>");
+
+      $("#journalist_comments").prepend("<div class='media'><a class='media-left'><img src='" + data.user.image + "' /></a><div class='media-body'>" + data.content + "</div><div class='media-right'" + data.created_at + "</div></div>");
       return $(element).val('');
     }).fail(function(err) {
       console.log('error!');

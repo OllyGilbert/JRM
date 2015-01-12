@@ -23,7 +23,8 @@
     <div>
       <%= render partial: "comments/form", locals: { resource: @journalist} %>
     </div>
-    <% grab_data_for_journalist(@journalist).each do |instance| %>
+    <div id="journalist_comments">
+      <% grab_data_for_journalist(@journalist).each do |instance| %>
 
       <% if instance.class == Comment%>
         <div class="media">
@@ -69,6 +70,7 @@
         </div>
       <% end %>
     <% end %>
+    </div>
   </div>
 
 </div>

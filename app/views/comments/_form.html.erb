@@ -12,5 +12,6 @@
 
   <div class="form-group">
     <%= f.text_area :content, rows: 5, class: "form-control story_comment #{resource.class}", placeholder: 'Type your notes here...', "data-resource-id" => resource.id %>
+    <input type=hidden data-avatar="<%=current_user.image%>"/>
   </div>
 <% end %>
