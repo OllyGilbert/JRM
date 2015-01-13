@@ -20,7 +20,7 @@ $(document).ready(function() {
       }
     }).done(function(data) {
       console.log("Ajax success", data);
-      $(element).parent().parent().parent().parent().children().last().prepend("<div class='well well-sm'><div class='media'><a class='media-left'><img src='" + data.user.image + "' /></a><div class='media-body'>" + data.content + "</div><div class='media-right'>" + data.created_at + "</div></div></div>"
+      $(element).parent().parent().parent().parent().children().last().prepend("<div class='well well-sm'><div class='media'><a class='media-left'><img src='" + data.user.image + "' /></a><div class='media-body'>" + data.content + "</div></div></div>"
         );
       return $(element).val('');
     }).fail(function(err) {
