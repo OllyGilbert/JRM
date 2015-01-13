@@ -1,29 +1,14 @@
-<h1>Listing stories</h1>
-
-<table>
-  <tr>
-    <th>Headline</th>
-    <th>Summary</th>
-    <th>Date published</th>
-    <th>Journalist</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @stories.each do |story| %>
-  <tr>
-    <td><%= story.headline %></td>
-    <td><%= story.summary %></td>
-    <td><%= story.date_published %></td>
-    <td><%= story.journalist.first_name %></td>
-    <td><%= link_to 'Show', story %></td>
-    <td><%= link_to 'Edit', edit_story_path(story) %></td>
-    <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <%=story.headline%>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <p><%= story.summary %></p>
+      <p>
+        <%= story.journalist.first_name%> <%=story.journalist.last_name%> | <%=story.publisher.name%> | <%= story.date_published %></p>
+    </div>
+  </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Story', new_story_path %>

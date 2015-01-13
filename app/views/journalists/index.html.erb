@@ -1,25 +1,14 @@
-<h1>Listing journalists</h1>
+<h1>My journalists</h1>
 
-<table>
-  <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @journalists.each do |journalist| %>
-  <tr>
-    <td><%= journalist.first_name %></td>
-    <td><%= journalist.last_name %></td>
-    <td><%= link_to 'Show', journalist %></td>
-    <td><%= link_to 'Edit', edit_journalist_path(journalist) %></td>
-    <td><%= link_to 'Destroy', journalist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div>
+    <div><%= journalist.first_name + " " + journalist.last_name%></div>
+    <div>
+      <%= link_to 'Show', journalist %> | <%= link_to 'Edit', edit_journalist_path(journalist) %> | <%= link_to 'Destroy', journalist, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
 <% end %>
-</table>
 
 <br />
 

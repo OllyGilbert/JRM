@@ -27,21 +27,25 @@
       <% grab_data_for_journalist(@journalist).each do |instance| %>
 
       <% if instance.class == Comment%>
-        <div class="media">
-          <a class="media-left">
-              <%= image_tag User.find(instance.user_id).image %>
-          </a>
-          <div class="media-body">
-            <%= instance.content %>
-          </div>
-          <div class="media-right">
-            <%= instance.created_at.to_formatted_s(:short) %>
+        <div class="well">
+          <div class="media">
+            <a class="media-left">
+                <%= image_tag User.find(instance.user_id).image %>
+            </a>
+            <div class="media-body">
+              <%= instance.content %>
+            </div>
+            <div class="media-right">
+              <%= instance.created_at.to_formatted_s(:short) %>
+            </div>
           </div>
         </div>
       <% else %>
         <div class="panel panel-default">
-          <div class="panel-title">
-            <a href="<%= instance.link%>"><%= instance.headline %></a>
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <a href="<%= instance.link%>"><%= instance.headline %></a>
+            </h3>
           </div>
           <div class="panel-body">
             <%= instance.summary %>
@@ -54,15 +58,17 @@
           </div>
           <div class="story-comment-container">
             <% instance.comments.order("created_at DESC").each do |story_comment| %>
-              <div class="media">
-                <a class="media-left">
-                  <%= image_tag User.find(story_comment.user_id).image %>
-                </a>
-                <div class="media-body">
-                  <%= story_comment.content %>
-                </div>
-                <div class="media-right">
-                  <%= story_comment.created_at.to_formatted_s(:short) %>
+              <div class="well well-sm">
+                <div class="media">
+                  <a class="media-left">
+                    <%= image_tag User.find(story_comment.user_id).image %>
+                  </a>
+                  <div class="media-body">
+                    <%= story_comment.content %>
+                  </div>
+                  <div class="media-right">
+                    <%= story_comment.created_at.to_formatted_s(:short) %>
+                  </div>
                 </div>
               </div>
             <% end %>
