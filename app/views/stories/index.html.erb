@@ -16,7 +16,7 @@
     <td><%= story.headline %></td>
     <td><%= story.summary %></td>
     <td><%= story.date_published %></td>
-    <td><%= story.journalist_id %></td>
+    <td><%= story.journalist.first_name %></td>
     <td><%= link_to 'Show', story %></td>
     <td><%= link_to 'Edit', edit_story_path(story) %></td>
     <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
